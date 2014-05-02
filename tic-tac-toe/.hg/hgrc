@@ -1,0 +1,2 @@
+[paths]
+default = ssh://hg@bitbucket.org/ismael9291/tic-tac-toe

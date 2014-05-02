@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.android.tictactoe" >
+
+    <application
+        android:name="com.android.tictactoe.TicTacToeApplication"
+        android:allowBackup="true"
+        android:debuggable="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.android.tictactoe.StartScreenActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.android.tictactoe.GameScreenActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="com.android.tictactoe.EndGameScreenActivity"
+            android:label="Tic Tac Toe" >
+            <intent-filter>
+                <action android:name="com.android.tictactoe.EndGameScreenActivity" />
+
+                <category android:name="android.intent.category.default" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".RulesActivity"
+            android:label="@string/title_activity_rules_activity" >
+        </activity>
+    </application>
+
+</manifest>

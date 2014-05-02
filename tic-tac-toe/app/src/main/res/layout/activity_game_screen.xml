@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#FFFFFFFF"
+    android:id="@+id/board_layout"
+    >
+
+<ImageView
+android:id="@+id/board"
+android:layout_width="fill_parent"
+android:layout_height="wrap_content"
+android:src="@drawable/white_board_rs"
+android:gravity="center"
+android:padding="10dip"
+android:layout_centerInParent="true"
+    />
+
+    <!-- Center Cell-->
+<ImageView
+android:id="@+id/square_5"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_centerInParent="true"
+android:src="@drawable/empty_white_rs"
+    />
+
+    <!-- TOP -->
+<ImageView
+android:id="@+id/square_2"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:src="@drawable/empty_white_rs"
+android:layout_above="@id/square_5"
+android:layout_alignRight="@id/square_5"
+android:layout_marginBottom="10dip"
+android:background="@null"
+    />
+
+    <!-- RIGHT -->
+<ImageView
+android:id="@+id/square_6"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:src="@drawable/empty_white_rs"
+android:background="@null"
+android:layout_toRightOf="@id/square_5"
+android:layout_alignBottom="@id/square_5"
+android:layout_marginLeft="10dip"
+   />
+
+    <!-- BOTTOM -->
+<ImageView
+android:id="@+id/square_8"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:src="@drawable/empty_white_rs"
+android:background="@null"
+android:layout_below="@id/square_5"
+android:layout_alignRight="@id/square_5"
+android:layout_marginTop="10dip"
+    />
+
+    <!-- LEFT -->
+<ImageView
+android:id="@+id/square_4"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:src="@drawable/empty_white_rs"
+android:background="@null"
+android:layout_toLeftOf="@id/square_5"
+android:layout_alignBottom="@id/square_5"
+android:layout_marginRight="10dip"
+    />
+
+    <!-- TOP_LEFT -->
+<ImageView
+android:id="@+id/square_1"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:src="@drawable/empty_white_rs"
+android:background="@null"
+android:layout_above="@id/square_5"
+android:layout_alignBottom="@id/square_2"
+android:layout_alignRight="@id/square_4"
+
+    />
+
+    <!-- TOP_RIGHT -->
+<ImageView
+android:id="@+id/square_3"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:src="@drawable/empty_white_rs"
+android:background="@null"
+android:layout_above="@id/square_5"
+android:layout_alignBottom="@id/square_2"
+android:layout_alignLeft="@id/square_6"
+
+    />
+
+    <!-- BOTTOM_LEFT -->
+<ImageView
+android:id="@+id/square_7"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:src="@drawable/empty_white_rs"
+android:background="@null"
+android:layout_below="@id/square_5"
+android:layout_alignTop="@id/square_8"
+android:layout_alignRight="@id/square_4"
+
+    />
+
+    <!-- BOTTOM_RIGHT -->
+<ImageView
+android:id="@+id/square_9"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:src="@drawable/empty_white_rs"
+android:background="@null"
+android:layout_below="@id/square_5"
+android:layout_alignTop="@id/square_8"
+android:layout_alignLeft="@id/square_6"
+    />
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:background="#FFFFFFFF"
+        android:layout_alignParentBottom="true"
+        >
+    <Button
+        android:id="@+id/main_reset_button"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:text="@string/reset"
+        android:onClick="resetButtonClicked"
+        />
+    </LinearLayout>
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:background="#FFFFFFFF"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="10dip"
+        android:id="@+id/init_turn"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:gravity="center"
+            android:text="@string/current_turn"
+            android:layout_marginRight="8dip"
+            />
+        <ImageView
+            android:id="@+id/init_turn_image"
+            android:src="@drawable/orange_x_rs"
+            android:layout_width="30dip"
+            android:layout_height="30dip"
+            />
+    </LinearLayout>
+
+    <!-- Game over someone winning -->
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:background="#FFFFFFFF"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="10dip"
+        android:id="@+id/game_winner"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:gravity="center"
+            android:text="@string/player"
+            android:layout_marginRight="6dip"
+            />
+        <ImageView
+            android:id="@+id/game_win_image"
+            android:src="@drawable/empty_white_rs"
+            android:layout_width="30dip"
+            android:layout_height="30dip"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:gravity="center"
+            android:text="@string/gameWinner"
+            android:layout_marginLeft="6dip"
+            />
+    </LinearLayout>
+
+    <!-- Game over Tie -->
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:background="#FFFFFFFF"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="10dip"
+        android:id="@+id/game_tie"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="30dip"
+            android:gravity="center"
+            android:text="@string/gameTie"
+            style="@style/TopTitle"
+            />
+    </LinearLayout>
+
+    <!-- Bottom Buttons -->
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:background="#FFFFFFFF"
+        android:layout_alignParentBottom="true"
+        >
+        <Button
+            android:id="@+id/reset_button"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:text="@string/reset"
+            android:onClick="resetButtonClicked"
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="End Game"
+            android:id="@+id/endGameButton"
+            android:enabled="true"
+            android:clickable="true"
+            android:onClick="onEndGameClick" />
+
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/turnName"
+        android:layout_below="@+id/init_turn"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+</RelativeLayout>
